@@ -13,5 +13,5 @@ jobs:
       - name: Annotate PR
         uses: productboardlabs/team-reviews-github-action@main
         with:
-          teams: ${{ github.event.pull_request.requested_teams }}
+          teams: ${{ github.pull_request }}
           token: ${{ secrets.GITHUB_TOKEN }}
