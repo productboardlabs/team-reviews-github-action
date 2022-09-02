@@ -9685,7 +9685,7 @@ const main = async () => {
      * and store them in variables for us to use.
      **/
     core.info('OK!');
-    core.info(github.context);
+    core.info(JSON.stringify(github.context));
 
     // const teamReviewers = getInputAsArray('teams', { required: true });
 
