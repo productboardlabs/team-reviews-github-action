@@ -18,10 +18,13 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const teamReviewers = getInputAsArray('teams', { required: true });
+    core.info('OK!');
+    core.info(github.context);
 
-    core.info('team reviewers');
-    core.info(teamReviewers);
+    // const teamReviewers = getInputAsArray('teams', { required: true });
+
+    // core.info('team reviewers');
+    // core.info(teamReviewers);
 
   //   /**
   //    * Now we need to create an instance of Octokit which will use to call
