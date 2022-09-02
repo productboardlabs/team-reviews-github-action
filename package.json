@@ -1,0 +1,20 @@
+{
+  "name": "team-reviews-github-action",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:productboardlabs/team-reviews-github-action.git",
+  "author": "karelskopek <karel@productboard.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
