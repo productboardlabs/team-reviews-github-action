@@ -1,9 +1,9 @@
 name: 'Team Reviewers Labels Action'
 description: 'TODO'
 inputs:
-  teams:
-    description: 'The teams!'
-    required: true
+  # teams:
+  #   description: 'The teams!'
+  #   required: true
   token:
     description: 'The token to use to access the GitHub API'
     required: true
