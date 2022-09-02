@@ -9685,7 +9685,9 @@ const main = async () => {
      * and store them in variables for us to use.
      **/
     core.info('OK!');
-    core.info(JSON.stringify(github.context));
+
+    core.info(JSON.stringify(github.context.payload.pull_request?.requested_teams));
+    core.info(JSON.stringify(github.context.payload.pull_request?.requested_reviewers));
 
     // const teamReviewers = getInputAsArray('teams', { required: true });
 
