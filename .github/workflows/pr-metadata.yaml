@@ -1,0 +1,17 @@
+name: Team Reviewers Labels Action
+
+on: 
+  pull_request:
+    types: [opened, reopened, synchronize, review_requested]
+
+jobs:
+
+  annotate-pr:
+    runs-on: ubuntu-latest
+    name: Label with team reviewers
+    steps:
+      - name: Annotate PR
+        uses: productboardlabs/team-reviews-github-action@main
+        with:
+          # teams: ${{ github.event.pull_request.requested_teams }}
+          token: ${{ secrets.GITHUB_TOKEN }}

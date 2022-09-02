@@ -1,14 +1,8 @@
 name: 'Team Reviewers Labels Action'
 description: 'TODO'
 inputs:
-  owner:
-    description: 'The owner of the repository'
-    required: true
-  repo:
-    description: 'The name of the repository'
-    required: true
-  pr_number:
-    description: 'The number of the pull request'
+  teams:
+    description: 'The teams!'
     required: true
   token:
     description: 'The token to use to access the GitHub API'

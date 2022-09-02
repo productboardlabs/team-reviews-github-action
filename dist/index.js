@@ -9684,7 +9684,7 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const teamReviewers = getInputAsArray('team-reviewers', { required: true });
+    const teamReviewers = getInputAsArray('teams', { required: true });
 
     core.info('team reviewers');
     core.info(teamReviewers);
