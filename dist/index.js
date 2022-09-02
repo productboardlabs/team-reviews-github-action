@@ -9679,13 +9679,13 @@ function getInputAsArray(name, options) {
 }
 
 const main = async () => {
-  // try {
+  try {
     /**
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    core.info('OK!');
-    core.info(JSON.stringify(github.context));
+    core.info(JSON.stringify(github.context.payload.pull_request?.requested_teams));
+    core.info(JSON.stringify(github.context.payload.pull_request?.requested_reviewers));
 
     // const teamReviewers = getInputAsArray('teams', { required: true });
 
@@ -9792,9 +9792,9 @@ const main = async () => {
   //     `
   //   });
 
-  // } catch (error) {
-  //   core.setFailed(error.message);
-  // }
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 // Call the main function to run the action

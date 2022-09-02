@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🟠 Checking for source code changes…"
+
+if [[ `git status src --porcelain` ]]; then
+  echo "🔵 Source code changed…"
+else
+  echo "🟢 No changes"
+  exit 0
+fi
+
+echo "🟠 Compiling…"
+
+npx ncc build src -o dist
+
+if [[ `git status dist --porcelain` ]]; then
+  echo "🟠 Adding compiled code…"
+  HUSKY=0 git add dist
+  echo "🟢 Done"
+else
+  echo "🟢 No changes"
+fi
