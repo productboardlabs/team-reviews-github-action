@@ -2,7 +2,12 @@ name: Add labels for team reviewers
 
 on: 
   pull_request:
-    types: [opened, review_requested, updated]
+    types:
+      - opened
+      - reopened
+      - review_requested
+      - synchronize
+      - updated
 
 jobs:
   annotate-pr:
