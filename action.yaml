@@ -1,9 +1,6 @@
-name: 'Team Reviewers Labels Action'
-description: 'TODO'
+name: Add labels for team reviewers
+description: Checks requested reviewers, takes teams and creates labels for them.
 inputs:
-  # teams:
-  #   description: 'The teams!'
-  #   required: true
   token:
     description: 'The token to use to access the GitHub API'
     required: true

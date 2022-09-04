@@ -3,10 +3,19 @@ const github = require('@actions/github');
 
 const main = async () => {
   try {
-    core.info('Testing…');
+    const teams = github.context.payload.pull_request?.requested_teams ?? [];
 
-    core.info(JSON.stringify(github.context.payload.pull_request?.requested_teams));
-    core.info(JSON.stringify(github.context.payload.pull_request?.requested_reviewers));
+    if (teams.length === 0) {
+      core.info('🟢 No teams requested.');
+
+      return;
+    }
+
+
+    core.info(`🔵 ${teams.length} ${teams.length ? 'team' : 'teams'} requested.`);
+
+    core.info(teams);
+
   } catch (error) {
     core.setFailed(error.message);
   }
